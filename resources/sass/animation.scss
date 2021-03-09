@@ -1,0 +1,30 @@
+.a-opacity-f-left {
+    transform: translateX(-13%);
+    opacity: 0;
+    //transition: .3s all ease-in-out;
+    &.seen {
+        transition: .3s all ease-in-out;
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.a-opacity-f-right {
+    transform: translateX(13%);
+    opacity: 0;
+    &.seen {
+        transition: .3s all ease-in-out;
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.a-opacity-f-bottom {
+    transform: translateY(5%);
+    opacity: 0;
+    &.seen {
+        transition: .3s all ease-in-out;
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

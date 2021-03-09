@@ -1,0 +1,50 @@
+.main-block {
+    background: black;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text-red {
+        color: #FFB5B5;
+    }
+
+    &-inner {
+        width: 100%;
+    }
+
+    &-content {
+    }
+
+    &__heading {
+        font-size: 120px;
+        line-height: 90%;
+        .lastname {
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+        .name {
+            margin-bottom: 0;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .level-profession {
+            .level {
+                font-weight: 500;
+                font-size: 72px;
+                line-height: 100%;
+                letter-spacing: 0.1em;
+            }
+            .profession {
+                margin-top: -20px;
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+    }
+}
