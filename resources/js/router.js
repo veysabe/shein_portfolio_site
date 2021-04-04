@@ -4,7 +4,8 @@ import Vue from "vue";
 Vue.use(vueRouter);
 
 import Index from "./views/Index"
-import Portfolio from "./views/Portfolio";
+import Login from "./views/Login";
+import Dashboard from "./components/Dashboard";
 
 const routes = [
     {
@@ -12,9 +13,14 @@ const routes = [
         component: Index
     },
     {
-        path: "/portfolio",
-        component: Portfolio
+        path: "/login",
+        component: Login
     },
+    {
+        path: "/dashboard",
+        component: Dashboard,
+        name: "Dashboard"
+    }
 ];
 
 export default new vueRouter({

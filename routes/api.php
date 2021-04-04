@@ -21,3 +21,5 @@ Route::resource('works', WorksController::class);
 Route::resource('skills', SkillsController::class);
 
 Route::post('/works/filter', [WorksController::class, 'filterBySkills']);
+
+Route::post('/login', [\App\Http\Controllers\Api\v1\LoginController::class, 'login']);
