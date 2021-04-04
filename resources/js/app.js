@@ -23,6 +23,7 @@ Vue.component('v-header', require('./components/Header.vue').default);
 Vue.component('main-block', require('./components/MainBlock.vue').default);
 Vue.component('portfolio-block', require('./components/PortfolioBlock.vue').default);
 
+import { store } from './store'
 import router from "./router";
 
 /**
@@ -33,5 +34,6 @@ import router from "./router";
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    store
 });

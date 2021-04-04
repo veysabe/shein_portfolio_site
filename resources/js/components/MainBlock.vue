@@ -2,20 +2,18 @@
     <div class="bg-black h-screen flex justify-center align-middle">
         <div class="container grid grid-cols-2 m-auto text-white">
             <div class="text-8xl flex flex-col items-center">
-                <p class="font-black uppercase">Ше<span class="text-red-200">и</span>н</p>
-                <p>Павел</p>
+                <p class="font-black uppercase" v-html="locale.last_name"></p>
+                <p v-html="locale.first_name"></p>
             </div>
             <div class="flex flex-col justify-between">
                 <div>
-                    <p class="tracking-widest text-7xl">Fullstack</p>
-                    <p class="text-4xl">веб-разработчик</p>
+                    <p class="tracking-widest text-7xl" v-html="locale.web_grade"></p>
+                    <p class="text-4xl" v-html="locale.post"></p>
                 </div>
                 <div>
-                    <div>
-                        Опыт коммерческой разработки - более <span class="font-black">1 года</span>
+                    <div v-html="locale.work_experience">
                     </div>
-                    <div>
-                        Опыт изучения языков программирования - более <span class="font-black">3 лет</span>
+                    <div v-html="locale.learn_experience">
                     </div>
                 </div>
             </div>
@@ -25,7 +23,9 @@
 
 <script>
 export default {
+    props: ['locale'],
     mounted() {
+        console.log(this.locale);
     }
 }
 </script>

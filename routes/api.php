@@ -16,6 +16,8 @@ use App\Http\Controllers\Api\v1\SkillsController;
 |
 */
 
+Route::middleware('auth:sanctum')->get('/admin', [\App\Http\Controllers\AdminController::class, 'index']);
+
 Route::resource('works', WorksController::class);
 
 Route::resource('skills', SkillsController::class);
@@ -23,3 +25,7 @@ Route::resource('skills', SkillsController::class);
 Route::post('/works/filter', [WorksController::class, 'filterBySkills']);
 
 Route::post('/login', [\App\Http\Controllers\Api\v1\LoginController::class, 'login']);
+
+Route::get('getlocale', function (Request $request) {
+   return session('lang', 'en');
+});

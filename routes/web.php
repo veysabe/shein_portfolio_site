@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +18,18 @@ use Illuminate\Support\Facades\Route;
 //Route::get('/', function () {
 //    return view('welcome');});
 
+Route::get('/test', [\App\Http\Controllers\Api\v1\WorksController::class, 'index']);
+
+Route::get('/lang/{lang}', function ($lang, Request $request) {
+    if (!in_array($lang, ['en', 'ru']))
+        return redirect('/');
+
+    $request->session()->put('lang', $lang);
+    return redirect('/');
+});
+
 Route::get('/{any}', function () {
-   return view('index');
+    return view('index');
 })->where('any', '.*');
 
 //Auth::routes();

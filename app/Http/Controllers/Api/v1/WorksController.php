@@ -17,7 +17,17 @@ class WorksController extends Controller
      */
     public function index()
     {
-        return Work::orderBy('sort', 'ASC')->with('skills')->get();
+        $works = Work::orderBy('sort', 'ASC')->with('skills')->get();
+
+        $locale = session('lang', 'en');
+
+        foreach ($works as $work) {
+            if ($locale == 'en') {
+                $work->name = $work->name_en;
+            }
+        }
+
+        return $works;
     }
 
     /**

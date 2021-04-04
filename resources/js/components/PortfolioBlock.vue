@@ -1,8 +1,7 @@
 <template>
     <div class="text-white bg-black py-14" v-if="skills.FrontEnd || skills.BackEnd">
         <div class="container mx-auto pb-5 text-white bg-black">
-            <div class="text-7xl font-bold">
-                Портфолио
+            <div class="text-7xl font-bold" v-html="locale.portfolio">
             </div>
             <div class="mt-10 flex">
                 <SkillItem
@@ -44,7 +43,8 @@ export default {
     components: {SkillItem, WorkItem},
     props: [
         'skills',
-        'works'
+        'works',
+        'locale'
     ],
     data: () => ({
         filter: {
@@ -63,7 +63,6 @@ export default {
             } else {
                 this.filter.selected.push(id);
             }
-            console.log(this.filter.selected);
             axios.post('/api/works/filter', {
                 body: this.filter.selected
             })

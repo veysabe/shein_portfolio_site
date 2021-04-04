@@ -49,7 +49,6 @@ export default {
         for (let i in this.work.skills) {
             this.skills[this.work.skills[i].type].push(this.work.skills[i]);
         }
-        console.log(this.skills);
     },
 }
 </script>
